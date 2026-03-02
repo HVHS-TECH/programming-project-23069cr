@@ -33,8 +33,11 @@ C5 = loadSound("mp3Files/HighC.mp3");
 
 function setup() {
 	console.log("setup: ");
-cnv = new Canvas(1000, 1000);
+cnv = new Canvas(1920, 941);
+Rect = new Sprite(500, 200, 100, 300);
+Rect.color = 'white';
 }
+
 function keyPressed() {
   //natural notes
     if (key === 'q') {
@@ -62,7 +65,6 @@ function keyPressed() {
     C5.play();
   }
 
-
   //Sharps
   if (key === '2') {
     Csharp.play();
@@ -86,7 +88,13 @@ function keyPressed() {
 // draw()
 /*******************************************************/
 function draw() {
-background ('grey')
+background ('pink')
+if (kb.pressing('q')) {
+Rect.color = 'grey';
+}
+if (kb.released('q')) {
+Rect.color = 'white';
+}
 }
 
 /*******************************************************/
