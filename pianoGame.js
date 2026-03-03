@@ -34,8 +34,33 @@ C5 = loadSound("mp3Files/HighC.mp3");
 function setup() {
 	console.log("setup: ");
 cnv = new Canvas(1920, 941);
-Rect = new Sprite(500, 200, 100, 300);
-Rect.color = 'white';
+C4Rect = new Sprite(500, 750, 100, 300, 'k');
+C4Rect.color = 'white';
+D4Rect = new Sprite(600, 750, 100, 300, 'k');
+D4Rect.color = 'white';
+E4Rect = new Sprite(700, 750, 100, 300, 'k');
+E4Rect.color = 'white';
+F4Rect = new Sprite(800, 750, 100, 300, 'k');
+F4Rect.color = 'white';
+G4Rect = new Sprite(900, 750, 100, 300, 'k');
+G4Rect.color = 'white';
+A4Rect = new Sprite(1000, 750, 100, 300, 'k');
+A4Rect.color = 'white';
+B4Rect = new Sprite(1100, 750, 100, 300, 'k');
+B4Rect.color = 'white';
+C5Rect = new Sprite(1200, 750, 100, 300, 'k');
+C5Rect.color = 'white';
+
+CsharpRect = new Sprite(550, 700, 50, 200, 'k');
+CsharpRect.color = 'black';
+DsharpRect = new Sprite(650, 700, 50, 200, 'k');
+DsharpRect.color = 'black';
+FsharpRect = new Sprite(850, 700, 50, 200, 'k');
+FsharpRect.color = 'black';
+GsharpRect = new Sprite(950, 700, 50, 200, 'k');
+GsharpRect.color = 'black';
+AsharpRect = new Sprite(1050, 700, 50, 200, 'k');
+AsharpRect.color = 'black';
 }
 
 function keyPressed() {
@@ -61,7 +86,7 @@ function keyPressed() {
     if (key === 'u') {
     B4.play();
   }
- if (key === 'i') {
+if (key === 'i') {
     C5.play();
   }
 
@@ -81,19 +106,90 @@ function keyPressed() {
   if (key === '7') {
     Asharp.play();
   }
-  
- 
 }
 /*******************************************************/
 // draw()
 /*******************************************************/
 function draw() {
 background ('pink')
+
 if (kb.pressing('q')) {
-Rect.color = 'grey';
+C4Rect.color = 'grey';
+} if (kb.released('q')) {
+C4Rect.color = 'white';
 }
-if (kb.released('q')) {
-Rect.color = 'white';
+
+if (kb.pressing('w')) {
+D4Rect.color = 'grey';
+} if (kb.released('w')) {
+D4Rect.color = 'white';
+}
+
+if (kb.pressing('e')) {
+E4Rect.color = 'grey';
+} if (kb.released('e')) {
+E4Rect.color = 'white';
+}
+
+if (kb.pressing('r')) {
+F4Rect.color = 'grey';
+} if (kb.released('r')) {
+F4Rect.color = 'white';
+}
+
+if (kb.pressing('t')) {
+G4Rect.color = 'grey';
+} if (kb.released('t')) {
+G4Rect.color = 'white';
+}
+
+if (kb.pressing('y')) {
+A4Rect.color = 'grey';
+} if (kb.released('y')) {
+A4Rect.color = 'white';
+}
+
+if (kb.pressing('u')) {
+B4Rect.color = 'grey';
+} if (kb.released('u')) {
+B4Rect.color = 'white';
+}
+
+if (kb.pressing('i')) {
+C5Rect.color = 'grey';
+} if (kb.released('i')) {
+C5Rect.color = 'white';
+}
+
+
+if (kb.pressing('2')) {
+CsharpRect.color = 'grey';
+} if (kb.released('2')) {
+CsharpRect.color = 'black';
+}
+
+if (kb.pressing('3')) {
+DsharpRect.color = 'grey';
+} if (kb.released('3')) {
+DsharpRect.color = 'black';
+}
+
+if (kb.pressing('5')) {
+FsharpRect.color = 'grey';
+} if (kb.released('5')) {
+FsharpRect.color = 'black';
+}
+
+if (kb.pressing('6')) {
+GsharpRect.color = 'grey';
+} if (kb.released('6')) {
+GsharpRect.color = 'black';
+}
+
+if (kb.pressing('7')) {
+AsharpRect.color = 'grey';
+} if (kb.released('7')) {
+AsharpRect.color = 'black';
 }
 }
 
