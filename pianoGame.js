@@ -2,6 +2,7 @@
 /*******************************************************/
 // setup()
 /*******************************************************/
+
 let C4;
 let Csharp;
 let D4;
@@ -16,6 +17,10 @@ let Asharp;
 let B4;
 let C5;
 function preload() {
+ grandPiano = loadImage('images/grandPiano.png');
+ cartoonPianoNotes = loadImage('images/pianoNotesCartoon.png');
+
+//notes sounds//
 C4 = loadSound("mp3Files/C.mp3");
 Csharp = loadSound("mp3Files/Csharp.mp3");
 D4 = loadSound("mp3Files/D.mp3");
@@ -34,29 +39,42 @@ C5 = loadSound("mp3Files/HighC.mp3");
 function setup() {
 	console.log("setup: ");
 cnv = new Canvas(1920, 941);
+
+//white note sprites//
 C4Rect = new Sprite(500, 750, 100, 300, 'k');
 C4Rect.color = 'white';
+
 D4Rect = new Sprite(600, 750, 100, 300, 'k');
 D4Rect.color = 'white';
+
 E4Rect = new Sprite(700, 750, 100, 300, 'k');
 E4Rect.color = 'white';
+
 F4Rect = new Sprite(800, 750, 100, 300, 'k');
 F4Rect.color = 'white';
+
 G4Rect = new Sprite(900, 750, 100, 300, 'k');
 G4Rect.color = 'white';
+
 A4Rect = new Sprite(1000, 750, 100, 300, 'k');
 A4Rect.color = 'white';
+
 B4Rect = new Sprite(1100, 750, 100, 300, 'k');
 B4Rect.color = 'white';
+
 C5Rect = new Sprite(1200, 750, 100, 300, 'k');
 C5Rect.color = 'white';
 
+//black note sprites//
 CsharpRect = new Sprite(550, 700, 50, 200, 'k');
 CsharpRect.color = 'black';
+
 DsharpRect = new Sprite(650, 700, 50, 200, 'k');
 DsharpRect.color = 'black';
+
 FsharpRect = new Sprite(850, 700, 50, 200, 'k');
 FsharpRect.color = 'black';
+
 GsharpRect = new Sprite(950, 700, 50, 200, 'k');
 GsharpRect.color = 'black';
 AsharpRect = new Sprite(1050, 700, 50, 200, 'k');
@@ -64,7 +82,7 @@ AsharpRect.color = 'black';
 }
 
 function keyPressed() {
-  //natural notes
+  //white note key presses to make sound//
     if (key === 'q') {
     C4.play();
   }
@@ -90,7 +108,7 @@ if (key === 'i') {
     C5.play();
   }
 
-  //Sharps
+  //black note key presses to make sound//
   if (key === '2') {
     Csharp.play();
   } 
@@ -112,7 +130,7 @@ if (key === 'i') {
 /*******************************************************/
 function draw() {
 background ('pink')
-
+//white note change colour if key presses//
 if (kb.pressing('q')) {
 C4Rect.color = 'grey';
 } if (kb.released('q')) {
@@ -162,6 +180,7 @@ C5Rect.color = 'white';
 }
 
 
+//Black note key change colour if key is pressed//
 if (kb.pressing('2')) {
 CsharpRect.color = 'grey';
 } if (kb.released('2')) {
