@@ -5,7 +5,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #f0f0f0;
+  background-color: pink;
 }
 
 .container {
@@ -20,7 +20,7 @@ body {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 30px 40px;
   font-size: 16px;
   cursor: pointer;
   border: none;
@@ -34,4 +34,17 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+.grandpiano {
+  position: absolute;
+  left: 1000px;
+  top: 10px;
+}
+
+.notes {
+  position: absolute;
+  left: 60px;
+  top: 300px;
+  rotate: -10deg;
 }
