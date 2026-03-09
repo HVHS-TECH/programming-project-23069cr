@@ -88,43 +88,6 @@ function keyPressed() {
   if (key === 'q') {
     score = score + 1;
   }
-    if (key === '2') {
-    score = score + 1;
-  }
-    if (key === 'w') {
-    score = score + 1;
-  }
-    if (key === '3') {
-    score = score + 1;
-  }
-    if (key === 'e') {
-    score = score + 1;
-  }
-    if (key === 'r') {
-    score = score + 1;
-  }
-    if (key === '5') {
-    score = score + 1;
-  }
-    if (key === 't') {
-    score = score + 1;
-  }
-    if (key === '6') {
-    score = score + 1;
-  }
-    if (key === 'y') {
-    score = score + 1;
-  }
-    if (key === '7') {
-    score = score + 1;
-  }
-    if (key === 'u') {
-    score = score + 1;
-  }
-    if (key === 'i') {
-    score = score + 1;
-  }
-
   //white note key presses to make sound//
     if (key === 'q') {
     C4.play();
