@@ -50,13 +50,14 @@ function setup() {
   trebleclefImg.resize(400, 400);
   trebleclef.visible = true;
 
-  crotchet = new Sprite(860, 300, 70, 70, 'k');
-  crotchet.image = (crotchetImh);
+  crotchet = new Sprite(950, 310, 70, 70, 'k');
+  crotchet.image = (crotchetImg);
   crotchet.visible = true;
-  crotchetImg.resize(400, 400);
+  crotchetImg.resize(150, 300);
 
+  cnoteLine = new Sprite(950, 465, 150, 6, 'k')
+  cnoteLine.color = "black";
 
-  
   //white note sprites//
   C4Rect = new Sprite(500, 750, 100, 300, 'k');
   C4Rect.color = 'white';
@@ -101,7 +102,23 @@ function setup() {
 function keyPressed() {
   //test if e is pressed//
   if (key === 'e') {
-    score = score + 1;
+    if (crotchet.y == 310) {
+      score = score + 1
+    }
+    if (crotchet.y != 310) {
+      score = score - 1;
+    }
+    crotchet.y = 342;
+  }
+
+  if (key === 'w') {
+    if (crotchet.y == 342) {
+      score = score + 1;
+    }
+    if (crotchet.y != 342) {
+      score = score - 1;
+    }
+    crotchet.y = 365;
   }
   //white note key presses to make sound//
   if (key === 'q') {
