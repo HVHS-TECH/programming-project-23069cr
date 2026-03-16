@@ -103,22 +103,29 @@ function keyPressed() {
   //test if e is pressed//
   if (key === 'e') {
     if (crotchet.y == 310) {
-      score = score + 1
-    }
-    if (crotchet.y != 310) {
+      score = score + 1;
+      crotchet.y = 342;
+    } else {
       score = score - 1;
     }
-    crotchet.y = 342;
   }
 
   if (key === 'w') {
     if (crotchet.y == 342) {
       score = score + 1;
-    }
-    if (crotchet.y != 342) {
+      crotchet.y = 365;
+    } else {
       score = score - 1;
     }
-    crotchet.y = 365;
+  }
+
+    if (key === 'q') {
+    if (crotchet.y == 365) {
+      score = score + 1;
+      crotchet.y = 342;
+    } else {
+      score = score - 1;
+    }
   }
   //white note key presses to make sound//
   if (key === 'q') {
