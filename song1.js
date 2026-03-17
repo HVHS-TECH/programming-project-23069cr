@@ -119,7 +119,7 @@ function keyPressed() {
     }
   }
 
-    if (key === 'q') {
+  if (key === 'q') {
     if (crotchet.y == 365) {
       score = score + 1;
       crotchet.y = 342;
@@ -176,6 +176,10 @@ function keyPressed() {
 function draw() {
   background('pink')
   text("Score: " + score, 50, 100);
+  textSize(30);
+  text("inputs:", 350, 540);
+  text("Q     2   W    3     E       R     5    T   6    Y    7     U         I", 475, 540);
+  text("C    C#   D   D#   E       F    F#   G  G#  A   A#   B        C", 475, 590);
   //white note change colour if key presses//
   if (kb.pressing('q')) {
     C4Rect.color = 'grey';
