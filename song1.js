@@ -16,6 +16,16 @@ let Asharp;
 let B4;
 let C5;
 
+//note variables//
+var cNotePress = 0;
+var dNotePress = 0;
+var eNotePress = 0;
+var fNotePress = 0;
+var gNotePress = 0;
+var aNotePress = 0;
+var bNotePress = 0;
+
+//score variable//
 var score = 0;
 function preload() {
   grandPiano = loadImage('images/grandPiano.png');
@@ -103,29 +113,68 @@ function keyPressed() {
   //test if e is pressed//
   if (key === 'e') {
     if (crotchet.y == 310) {
+      console.log(eNotePress = eNotePress + 1);
+    }
+
+    if (crotchet.y == 310) {
       score = score + 1;
-      crotchet.y = 342;
     } else {
       score = score - 1;
+    }
+
+    if (eNotePress == 1) {
+      crotchet.y = 342;
+    }
+
+    if (eNotePress == 4) {
+      crotchet.y = 342;
+    }
+
+     if (eNotePress == 5) {
+      crotchet.y = 250;
     }
   }
 
   if (key === 'w') {
     if (crotchet.y == 342) {
+      console.log(dNotePress = dNotePress + 1);
+    }
+
+    if (crotchet.y == 342) {
       score = score + 1;
-      crotchet.y = 365;
     } else {
       score = score - 1;
     }
+
+    if (dNotePress == 1) {
+      crotchet.y = 365;
+    }
+
+    if (dNotePress == 2) {
+      crotchet.y = 310;
+    }
+
+    if (dNotePress == 5) {
+      crotchet.y = 310;
+    }
+
   }
 
   if (key === 'q') {
     if (crotchet.y == 365) {
+      console.log(cNotePress = cNotePress + 1);
+    }
+
+    if (crotchet.y == 365) {
       score = score + 1;
-      crotchet.y = 342;
     } else {
       score = score - 1;
     }
+
+    if (cNotePress == 1) {
+      crotchet.y = 342;
+    }
+
   }
   //white note key presses to make sound//
   if (key === 'q') {
