@@ -16,6 +16,9 @@ let Asharp;
 let B4;
 let C5;
 
+//for loop excuse variable//
+let lives = 3;
+
 //note variables//
 var cNotePress = 0;
 var dNotePress = 0;
@@ -54,6 +57,12 @@ function preload() {
 function setup() {
   console.log("setup: ");
   cnv = new Canvas(1920, 941);
+
+  //safe keeping code so it won't ruin my game. livesdisplay.text = "Lives: " + lives;//
+
+  livesdisplay = new Sprite(860, 60, 55, 55, 'k');
+  livesdisplay.text = "Lives: " + lives;
+
   //image test//
   trebleclef = new Sprite(860, 300, 70, 70, 'k');
   trebleclef.image = (trebleclefImg);
@@ -110,7 +119,13 @@ function setup() {
 }
 
 function keyPressed() {
-  //test if e is pressed//
+  //Crotchet locations//
+  // C = 365//
+  // D = 342//
+  // E = 310// 
+  // G = 250//
+
+  //E presses//
   if (key === 'e') {
     if (crotchet.y == 310) {
       console.log(eNotePress = eNotePress + 1);
@@ -121,20 +136,34 @@ function keyPressed() {
     } else {
       score = score - 1;
     }
-
-    if (eNotePress == 1) {
+    //the console logs are so I can control which direction they go in// 
+    if (eNotePress == 1 && crotchet.y == 310) {
       crotchet.y = 342;
     }
 
-    if (eNotePress == 4) {
+    if (eNotePress == 4 && crotchet.y == 310) {
       crotchet.y = 342;
     }
 
-     if (eNotePress == 5) {
+    if (eNotePress == 5 && crotchet.y == 310) {
       crotchet.y = 250;
+    }
+
+    if (eNotePress == 6 && crotchet.y == 310) {
+      crotchet.y = 342;
+    }
+
+    if (eNotePress == 9 && crotchet.y == 310) {
+      crotchet.y = 342;
+    }
+
+    if (eNotePress == 10 && crotchet.y == 310) {
+      crotchet.y = 342;
     }
   }
 
+
+  //D presses//
   if (key === 'w') {
     if (crotchet.y == 342) {
       console.log(dNotePress = dNotePress + 1);
@@ -146,20 +175,36 @@ function keyPressed() {
       score = score - 1;
     }
 
-    if (dNotePress == 1) {
+    if (dNotePress == 1 && crotchet.y == 342) {
       crotchet.y = 365;
     }
 
-    if (dNotePress == 2) {
+    if (dNotePress == 2 && crotchet.y == 342) {
       crotchet.y = 310;
     }
 
-    if (dNotePress == 5) {
+    if (dNotePress == 5 && crotchet.y == 342) {
       crotchet.y = 310;
     }
 
+    if (dNotePress == 6 && crotchet.y == 342) {
+      crotchet.y = 365;
+    }
+
+    if (dNotePress == 7 && crotchet.y == 342) {
+      crotchet.y = 310;
+    }
+
+    if (dNotePress == 8 && crotchet.y == 342) {
+      crotchet.y = 310;
+    }
+
+    if (dNotePress == 9 && crotchet.y == 342) {
+      crotchet.y = 365;
+    }
   }
 
+  //C presses//
   if (key === 'q') {
     if (crotchet.y == 365) {
       console.log(cNotePress = cNotePress + 1);
@@ -171,11 +216,32 @@ function keyPressed() {
       score = score - 1;
     }
 
-    if (cNotePress == 1) {
+    if (cNotePress == 1 && crotchet.y == 365) {
       crotchet.y = 342;
     }
 
+    if (cNotePress == 2 && crotchet.y == 365) {
+      crotchet.y = 342;
+    }
   }
+
+  //G presses//
+  if (key === 't') {
+    if (crotchet.y == 250) {
+      console.log(gNotePress = gNotePress + 1);
+    }
+
+    if (crotchet.y == 250) {
+      score = score + 1;
+    } else {
+      score = score - 1;
+    }
+
+    if (gNotePress == 2 && crotchet.y == 250) {
+      crotchet.y = 310;
+    }
+  }
+
   //white note key presses to make sound//
   if (key === 'q') {
     C4.play();
@@ -229,6 +295,7 @@ function draw() {
   text("inputs:", 350, 540);
   text("Q     2   W    3     E       R     5    T   6    Y    7     U         I", 475, 540);
   text("C    C#   D   D#   E       F    F#   G  G#  A   A#   B        C", 475, 590);
+
   //white note change colour if key presses//
   if (kb.pressing('q')) {
     C4Rect.color = 'grey';
