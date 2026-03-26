@@ -17,7 +17,7 @@ let B4;
 let C5;
 
 //for loop excuse variable//
-let lives = 3;
+var lives = 3;
 
 //note variables//
 var cNotePress = 0;
@@ -33,7 +33,8 @@ var score = 0;
 function preload() {
   grandPiano = loadImage('images/grandPiano.png');
   cartoonPianoNotes = loadImage('images/pianoNotesCartoon.png');
-
+  hell = loadImage('images/HELL.jpg');
+  heaven = loadImage('images/heaven.jpg');
   //note images//
   crotchetImg = loadImage('images/crotchet.png');
   trebleclefImg = loadImage('images/trebleclef.png');
@@ -57,11 +58,7 @@ function preload() {
 function setup() {
   console.log("setup: ");
   cnv = new Canvas(1920, 941);
-
   //safe keeping code so it won't ruin my game. livesdisplay.text = "Lives: " + lives;//
-
-  livesdisplay = new Sprite(860, 60, 55, 55, 'k');
-  livesdisplay.text = "Lives: " + lives;
 
   //image test//
   trebleclef = new Sprite(860, 300, 70, 70, 'k');
@@ -134,7 +131,7 @@ function keyPressed() {
     if (crotchet.y == 310) {
       score = score + 1;
     } else {
-      score = score - 1;
+      lives--;
     }
     //the console logs are so I can control which direction they go in// 
     if (eNotePress == 1 && crotchet.y == 310) {
@@ -172,7 +169,7 @@ function keyPressed() {
     if (crotchet.y == 342) {
       score = score + 1;
     } else {
-      score = score - 1;
+      lives--;
     }
 
     if (dNotePress == 1 && crotchet.y == 342) {
@@ -213,7 +210,7 @@ function keyPressed() {
     if (crotchet.y == 365) {
       score = score + 1;
     } else {
-      score = score - 1;
+      lives--;
     }
 
     if (cNotePress == 1 && crotchet.y == 365) {
@@ -234,7 +231,7 @@ function keyPressed() {
     if (crotchet.y == 250) {
       score = score + 1;
     } else {
-      score = score - 1;
+      lives--;
     }
 
     if (gNotePress == 2 && crotchet.y == 250) {
@@ -242,6 +239,42 @@ function keyPressed() {
     }
   }
 
+  //unused note presses//
+  if (key === 'r') {
+    lives--;
+  }
+
+  if (key === 'y') {
+    lives--;
+  }
+
+  if (key === 'u') {
+    lives--;
+  }
+
+  if (key === 'i') {
+    lives--;
+  }
+
+  if (key === '2') {
+    lives--;
+  }
+
+  if (key === '3') {
+    lives--;
+  }
+
+  if (key === '5') {
+    lives--;
+  }
+
+  if (key === '6') {
+    lives--;
+  }
+
+  if (key === '7') {
+    lives--;
+  }
   //white note key presses to make sound//
   if (key === 'q') {
     C4.play();
@@ -290,11 +323,29 @@ function keyPressed() {
 /*******************************************************/
 function draw() {
   background('pink')
-  text("Score: " + score, 50, 100);
+
+  if (lives < 1) {
+    background(hell);
+    text("Game over! You're in hell now. Your score was: " + score, 600, 540);
+    exit();
+  }
+
+  if (cNotePress == 3) {
+    background(heaven);
+    text("Good job! You're in heaven now. Your score was: " + score, 600, 540);
+    exit();
+  }
+  text("Score: " + score, 800, 50);
   textSize(30);
   text("inputs:", 350, 540);
   text("Q     2   W    3     E       R     5    T   6    Y    7     U         I", 475, 540);
   text("C    C#   D   D#   E       F    F#   G  G#  A   A#   B        C", 475, 590);
+
+
+  //My beautiful for loop//
+  for (i = 0; i < lives; i++) {
+    rect(60 * i, 60, 55, 55);
+  }
 
   //white note change colour if key presses//
   if (kb.pressing('q')) {
