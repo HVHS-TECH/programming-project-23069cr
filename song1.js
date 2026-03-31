@@ -132,6 +132,7 @@ function keyPressed() {
       score = score + 1;
     } else {
       lives--;
+      score = score - 1;
     }
     //the console logs are so I can control which direction they go in// 
     if (eNotePress == 1 && crotchet.y == 310) {
@@ -170,6 +171,7 @@ function keyPressed() {
       score = score + 1;
     } else {
       lives--;
+      score = score - 1;
     }
 
     if (dNotePress == 1 && crotchet.y == 342) {
@@ -211,6 +213,7 @@ function keyPressed() {
       score = score + 1;
     } else {
       lives--;
+      score = score - 1;
     }
 
     if (cNotePress == 1 && crotchet.y == 365) {
@@ -232,6 +235,7 @@ function keyPressed() {
       score = score + 1;
     } else {
       lives--;
+      score = score - 1;
     }
 
     if (gNotePress == 2 && crotchet.y == 250) {
@@ -242,38 +246,47 @@ function keyPressed() {
   //unused note presses//
   if (key === 'r') {
     lives--;
+    score = score - 1;
   }
 
   if (key === 'y') {
     lives--;
+    score = score - 1;
   }
 
   if (key === 'u') {
     lives--;
+    score = score - 1;
   }
 
   if (key === 'i') {
     lives--;
+    score = score - 1;
   }
 
   if (key === '2') {
     lives--;
+    score = score - 1;
   }
 
   if (key === '3') {
     lives--;
+    score = score - 1;
   }
 
   if (key === '5') {
     lives--;
+    score = score - 1;
   }
 
   if (key === '6') {
     lives--;
+    score = score - 1;
   }
 
   if (key === '7') {
     lives--;
+    score = score - 1;
   }
   //white note key presses to make sound//
   if (key === 'q') {
@@ -324,12 +337,14 @@ function keyPressed() {
 function draw() {
   background('pink')
 
+  //lose screen//
   if (lives < 1) {
     background(hell);
     text("Game over! You're in hell now. Your score was: " + score, 600, 540);
     exit();
   }
 
+  //win screen//
   if (cNotePress == 3) {
     background(heaven);
     text("Good job! You're in heaven now. Your score was: " + score, 600, 540);
